@@ -5,4 +5,4 @@
     name: "{{ account }}"
     update_password: always
     password: "{{ change_password | password_hash('sha512') }}"
-  notify: changed Password
+  notify: changed password
