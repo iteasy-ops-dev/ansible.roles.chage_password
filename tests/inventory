@@ -1,0 +1,2 @@
+[vms]
+172.16.74.100 ansible_python_interpreter=/usr/bin/python

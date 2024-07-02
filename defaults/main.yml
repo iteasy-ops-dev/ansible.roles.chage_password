@@ -1,0 +1,4 @@
+---
+# defaults file for change_password
+account: "root"
+change_password: "password"

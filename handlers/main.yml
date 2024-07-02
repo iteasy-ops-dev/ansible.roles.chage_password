@@ -1,0 +1,6 @@
+---
+# handlers file for change_password
+- name: changed password
+  ansible.builtin.debug:
+    msg: |
+      "{{ account }}"의 비밀번호가 "{{ change_password }}" 로 변경 완료.

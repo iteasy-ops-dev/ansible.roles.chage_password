@@ -1,0 +1,4 @@
+---
+# vars file for change_password
+account: "root"
+change_password: "1123"
