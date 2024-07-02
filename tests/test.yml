@@ -1,5 +1,4 @@
----
 - hosts: vms
   remote_user: root
   roles:
-    - change_password
+    - ansible.roles.chage_password
