@@ -27,3 +27,7 @@ Example Playbook
   roles:
     - ansible.roles.chage_password
 ```
+
+License
+------------
+BSD

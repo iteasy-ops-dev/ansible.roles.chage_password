@@ -1,12 +1,13 @@
 galaxy_info:
+  role_name: iteasy_ansible_roles_change_password
   author: qksgnsw
   description: change password.
   company: iteasy
-  license: license (GPL-2.0-or-later, MIT, etc)
+  license: "license (BSD)"
 
   min_ansible_version: "2.1"
 
-  galaxy_tags: 
+  galaxy_tags:
     - user
     - password
     - linux
