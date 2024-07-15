@@ -1,8 +1,25 @@
 ---
 # vars file for change_password
-- name: 비밀번호 변경
+# - name: 비밀번호 변경
+#   ansible.builtin.user:
+#     name: "{{ account }}"
+#     update_password: always
+#     password: "{{ change_password | password_hash('sha512') }}"
+#   notify: Changed password
+- name: Check if account exists
+  ansible.builtin.command: "getent passwd {{ account }}"
+  register: account_check
+  ignore_errors: true
+
+- name: Fail if account does not exist
+  ansible.builtin.fail:
+    msg: "Account {{ account }} does not exist."
+  when: account_check.rc != 0
+
+- name: Change password if account exists
   ansible.builtin.user:
     name: "{{ account }}"
     update_password: always
     password: "{{ change_password | password_hash('sha512') }}"
+  when: account_check.rc == 0
   notify: Changed password
