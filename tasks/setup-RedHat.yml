@@ -1,23 +1,5 @@
 ---
 # vars file for change_password
-- name: Check for Python 3
-  raw: which python3
-  register: python3_exists
-  ignore_errors: true
-
-- name: Set Python interpreter to python3 if available
-  set_fact:
-    ansible_python_interpreter: /usr/bin/python3
-  when: python3_exists.rc == 0
-
-- name: Check Python version
-  command: "{{ ansible_python_interpreter | default('/usr/bin/python') }} --version"
-  register: python_version_output
-
-- name: Print Python version
-  debug:
-    msg: "Using Python interpreter: {{ ansible_python_interpreter | default('/usr/bin/python') }} with version: {{ python_version_output.stdout }}"
-    
 - name: Check if account exists
   ansible.builtin.command: "getent passwd {{ account }}"
   register: account_check
